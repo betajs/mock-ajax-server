@@ -1,0 +1,60 @@
+{
+    "homepage": "https://github.com/betajs/mock-ajax-server",
+    "license": "Apache-2.0",
+    "licenses": [
+        {
+            "type": "Apache-2.0",
+            "url": "https://github.com/betajs/mock-ajax-server/blob/master/LICENSE"
+        }
+    ],
+    "author": {
+        "name": "BetaJS",
+        "email": "info@betajs.com"
+    },
+    "bugs": {
+        "url": "https://github.com/betajs/mock-ajax-server/issues"
+    },
+    "name": "mock-ajax-server",
+    "description": "BetaJS Mock Ajax Server for Testing",
+    "version": "0.0.1",
+    "contributors": [
+        "Oliver Friedmann"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "git://github.com/betajs/mock-ajax-server.git"
+    },
+    "engines": {
+        "node": ""
+    },
+    "dependencies": {
+        "express": "",
+        "express-ie-cors": "",
+        "cookie-parser": "",
+        "body-parser": "",
+        "node-getopt": ""
+    },
+    "devDependencies": {
+        "betajs-compile": "",
+        "grunt-contrib-jshint": "",
+        "grunt-template": "",
+        "grunt": ""
+    },
+    "keywords": [
+        "gruntplugin"
+    ],
+    "meta": {
+        "blog": "http://blog.betajs.com",
+        "twitter": "http://twitter.com/thebetajs",
+        "badges": {
+            "codeclimate": true,
+            "travis": false,
+            "npm": true
+        },
+        "compatability": {
+            "NodeJS": "0.10 - Latest"
+        },
+        "installdoc": "docsrc/common/install.md",
+        "summarydoc": "docsrc/common/summary.md"
+    }
+}
