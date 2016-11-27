@@ -6,7 +6,7 @@ module.exports = function(grunt) {
 	gruntHelper.init(pkg, grunt);
 
 	gruntHelper
-	.lintTask(null, ['*.js', 'tasks/*.js', 'src/*.js'])
+	.lintTask(null, ['*.js', 'tasks/*.js', 'src/*.js', 'assets/*.js'])
 	
     /* External Configurations */
     .codeclimateTask()

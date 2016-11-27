@@ -63,8 +63,7 @@
 		},
 
 		setCookie : function(key, value, path) {
-			var result = encodeURIComponent(key) + "="
-					+ encodeURIComponent(value);
+			var result = encodeURIComponent(key) + "=" + encodeURIComponent(value);
 			if (path)
 				result += "; path=" + path;
 			document.cookie = result;
@@ -78,9 +77,7 @@
 
 		createCrossCookie : function(cookiename, cookievalue, callback) {
 			Helper.loadByIframe({
-				url : this.corsHost + "/setcookie?name="
-						+ encodeURIComponent(cookiename) + "&value="
-						+ encodeURIComponent(cookievalue),
+				url : this.corsHost + "/setcookie?name=" + encodeURIComponent(cookiename) + "&value=" + encodeURIComponent(cookievalue),
 				remove : false
 			}, function() {
 				callback();
@@ -100,8 +97,7 @@
 			for ( var key in serverOptions)
 				arr.push(key + ":" + serverOptions[key]);
 			return {
-				uri : (clientOptions.cors ? this.corsHost : "") + "/request/"
-						+ arr.join(",") + clientOptions.path,
+				uri : (clientOptions.cors ? this.corsHost : "") + "/request/" + arr.join(",") + clientOptions.path,
 				id : id
 			};
 		},

@@ -19,4 +19,4 @@ module.exports = function (sourceUrl, targetUrl, callback) {
         	callback(result);
         });
 	});
-}
+};
