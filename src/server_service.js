@@ -1,5 +1,5 @@
 var Express = require("express");
-var Proxy = require(__dirname + "/proxy_service.js");
+//var Proxy = require(__dirname + "/proxy_service.js");
 
 module.exports = function (Config) {
 	var logs = {};
@@ -29,10 +29,33 @@ module.exports = function (Config) {
 
 		if (Config.proxyServe) {
 			express.get('/proxy', function (request, response) {
+				var html = "<!DOCTYPE html><head>" +
+				           "<script src='/assets/client.js'></script>" +
+				           "<script>MockAjax.corsHost = '" + request.query.cors + "';</script>" +
+				           "<script>MockAjax.originUrl = '" + request.query.origin + "';</script>" +
+				           "<script src='" + request.query.url + "'></script>" +
+				           "</head><body><div id='qunit'></div><div id='qunit-fixture'></div></body></html>";
+				response.status(200).header("Content-Type", "text/html").send(html);
+			});
+
+			/*
+			express.get('/proxy', function (request, response) {
+				console.log("Proxying...");
+				response.header("X-XSS-Protection", "0")
+				response.status(200).header("Content-Type", "text/html").send(request.query.html);
+			});
+			*/
+			/*
+			express.get('/proxy', function (request, response) {
 				Proxy(request.query.url, "/proxy?url=", function (result) {
 					response.status(result.status).header("Content-Type", result.contentType).send(result.data);
 				});
 			});
+			express.get('/script', function (request, response) {
+				var html = "<!DOCTYPE html><head><script src='/assets/client.js'></script><script>window.OriginUrl='" + request.query.origin + "';</script><script src='" + request.query.url + "'></script></head><body><div id='qunit'></div><div id='qunit-fixture'></div></body></html>";
+				response.status(200).header("Content-Type", "text/html").send(html);
+			});
+			*/
 		}
 		
 		express.get('/logs/:id', function (request, response) {

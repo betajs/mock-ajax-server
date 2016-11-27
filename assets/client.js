@@ -75,6 +75,60 @@
 
 		corsHost : "",
 
+		loadStyles: function (url, callback, context) {
+			var executed = false;
+			var head = document.getElementsByTagName("head")[0];
+			var style = document.createElement("link");
+			style.rel = "stylesheet";
+			style.href = url;
+			style.onload = style.onreadystatechange = function() {
+				if (!executed && (!this.readyState || this.readyState == "loaded" || this.readyState == "complete")) {
+					executed = true;
+					style.onload = style.onreadystatechange = null;
+					if (callback)
+						callback.call(context || this, url);
+				}
+			};
+			head.appendChild(style);
+		},
+		
+		loadStyleList: function (urls) {
+			if (!urls.length)
+				return;
+			this.loadStyles(urls.shift(), function () {
+				MockAjax.loadStyleList(urls);
+			});
+		},
+
+		loadScript: function (url, callback, context) {
+			var executed = false;
+			var head = document.getElementsByTagName("head")[0];
+			var script = document.createElement("script");
+			script.src = url;
+			script.onload = script.onreadystatechange = function() {
+				if (!executed && (!this.readyState || this.readyState == "loaded" || this.readyState == "complete")) {
+					executed = true;
+					script.onload = script.onreadystatechange = null;
+					if (callback)
+						callback.call(context || this, url);
+					// Does not work properly if we remove the script for some reason if it is used the second time !?
+					//head.removeChild(script);
+				}
+			};
+			head.appendChild(script);
+		},
+
+		loadScriptList: function (urls, callback) {
+			if (!urls.length) {
+				if (callback)
+					callback();
+				return;
+			}
+			this.loadScript(urls.shift(), function () {
+				MockAjax.loadScriptList(urls);
+			});
+		},
+
 		createCrossCookie : function(cookiename, cookievalue, callback) {
 			Helper.loadByIframe({
 				url : this.corsHost + "/setcookie?name=" + encodeURIComponent(cookiename) + "&value=" + encodeURIComponent(cookievalue),
