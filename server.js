@@ -7,7 +7,7 @@ opt = require('node-getopt').create([
 var Server = require(__dirname + "/src/server_service.js");
 
 Server({
-	ports: opt.ports || [5000, 5001],
+	ports: opt.ports || (process.env.PORT ? [process.env.PORT] : [5000, 5001]),
 	staticServe: opt.staticserve,
 	proxyServe: opt.proxyserve
 });
