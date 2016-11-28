@@ -125,7 +125,7 @@
 				return;
 			}
 			this.loadScript(urls.shift(), function () {
-				MockAjax.loadScriptList(urls);
+				MockAjax.loadScriptList(urls, callback);
 			});
 		},
 
