@@ -1,7 +1,7 @@
 {
 	"name": "mock-ajax-server",
 	"description": "BetaJS Mock Ajax Server for Testing",
-	"version": "0.0.4",
+	"version": "0.0.5",
 	"homepage": "https://github.com/betajs/mock-ajax-server",
 	"contributors": [
 		"Oliver Friedmann"

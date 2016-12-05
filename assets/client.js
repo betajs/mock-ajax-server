@@ -35,14 +35,18 @@
 				iframe.style.display = "none";
 			}
 			var loaded = function() {
-				var body = null;
-				var content = null;
-				try {
-					body = iframe.contentDocument.body;
-					content = body.textContent || body.innerText;
-				} catch (e) {
+				if (options.nodata) {
+					callback.call(context || this);
+				} else {
+					var body = null;
+					var content = null;
+					try {
+						body = iframe.contentDocument.body;
+						content = body.textContent || body.innerText;
+					} catch (e) {
+					}
+					callback.call(context || this, content, body, iframe);
 				}
-				callback.call(context || this, content, body, iframe);
 				if (options.remove)
 					document.body.removeChild(iframe);
 			};
@@ -132,7 +136,8 @@
 		createCrossCookie : function(cookiename, cookievalue, callback) {
 			Helper.loadByIframe({
 				url : this.corsHost + "/setcookie?name=" + encodeURIComponent(cookiename) + "&value=" + encodeURIComponent(cookievalue),
-				remove : false
+				remove : false,
+				nodata: true
 			}, function() {
 				callback();
 			});
