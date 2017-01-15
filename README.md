@@ -1,4 +1,4 @@
-# mock-ajax-server 0.0.4
+# mock-ajax-server 0.0.6
 [![Code Climate](https://codeclimate.com/github/betajs/mock-ajax-server/badges/gpa.svg)](https://codeclimate.com/github/betajs/mock-ajax-server)
 [![NPM](https://img.shields.io/npm/v/mock-ajax-server.svg?style=flat)](https://www.npmjs.com/package/mock-ajax-server)
 
