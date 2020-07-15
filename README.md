@@ -1,7 +1,7 @@
 # mock-ajax-server 0.0.6
 [![Code Climate](https://codeclimate.com/github/betajs/mock-ajax-server/badges/gpa.svg)](https://codeclimate.com/github/betajs/mock-ajax-server)
 [![NPM](https://img.shields.io/npm/v/mock-ajax-server.svg?style=flat)](https://www.npmjs.com/package/mock-ajax-server)
-
+[![Gitter Chat](https://badges.gitter.im/betajs/mock-ajax-server.svg)](https://gitter.im/betajs/mock-ajax-server)
 
 BetaJS Mock Ajax Server for Testing
 
@@ -38,16 +38,16 @@ We'll add more details soon.
 | Homepage   | [https://github.com/betajs/mock-ajax-server](https://github.com/betajs/mock-ajax-server) |
 | Git        | [git://github.com/betajs/mock-ajax-server.git](git://github.com/betajs/mock-ajax-server.git) |
 | Repository | [https://github.com/betajs/mock-ajax-server](https://github.com/betajs/mock-ajax-server) |
-| Blog       | [http://blog.betajs.com](http://blog.betajs.com) | 
-| Twitter    | [http://twitter.com/thebetajs](http://twitter.com/thebetajs) | 
- 
+| Blog       | [https://blog.betajs.com](https://blog.betajs.com) | 
+| Twitter    | [https://twitter.com/thebetajs](https://twitter.com/thebetajs) | 
+| Gitter     | [https://gitter.im/betajs/mock-ajax-server](https://gitter.im/betajs/mock-ajax-server) | 
 
 
 
 ## Compatability
 | Target | Versions |
 | :----- | -------: |
-| NodeJS | 0.10 - Latest |
+| NodeJS | 4.0 - Latest |
 
 
 
